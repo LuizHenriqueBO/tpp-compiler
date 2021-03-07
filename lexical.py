@@ -11,7 +11,6 @@ class Lexical:
   keywords = {
     'inteiro'       : 'INTEIRO',
     'flutuante'     : 'FLUTUANTE',
-    'cientifico'    : 'CIENTIFICO',
     'senão'         : 'SENAO',
     'se'            : 'SE',
     'fim'           : 'FIM',
