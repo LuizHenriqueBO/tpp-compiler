@@ -29,8 +29,8 @@ class Lexical:
     'SUBTRACAO',
     'MULTIPLICACAO',
     'DIVISAO',
-    'PARENTESES_ESQ',
-    'PARENTESES_DIR',
+    'ABRE_PARENTESE',
+    'FECHA_PARENTESE',
     'ID',
     'DOIS_PONTOS',
     'IGUAL',
@@ -39,12 +39,12 @@ class Lexical:
     'DIFERENTE',
     'MAIOR_IGUAL',
     'MENOR_IGUAL',
-    'COLCHETE_DIR',
-    'COLCHETE_ESQ',
+    'ABRE_COLCHETE',
+    'FECHA_COLCHETE',
     'VIRGULA',
-    'COMENTARIO',
+    # 'COMENTARIO',
     'ATRIBUICAO',
-    'CARACTERES',
+    'CARACTER',
     'NEGACAO',
     'OU_LOGICO',
     'E_LOGICO',
@@ -58,10 +58,10 @@ class Lexical:
   t_SUBTRACAO          =  r'-'
   t_MULTIPLICACAO      =  r'\*'
   t_DIVISAO            =  r'/'
-  t_PARENTESES_ESQ     =  r'\('
-  t_PARENTESES_DIR     =  r'\)'
-  t_COLCHETE_DIR       =  r'\]'
-  t_COLCHETE_ESQ       =  r'\['
+  t_ABRE_PARENTESE     =  r'\('
+  t_FECHA_PARENTESE    =  r'\)'
+  t_FECHA_COLCHETE     =  r'\]'
+  t_ABRE_COLCHETE      =  r'\['
   t_VIRGULA            =  r','
   t_DOIS_PONTOS        =  r':'
   t_IGUAL              =  r'='
@@ -71,7 +71,7 @@ class Lexical:
   t_MAIOR_IGUAL        =  r'>='
   t_MENOR_IGUAL        =  r'<='
   t_ATRIBUICAO         =  r':='
-  t_CARACTERES         =  r'\"[^\"]*\"'
+  t_CARACTER           =  r'\"[^\"]*\"'
   t_NEGACAO            =  r'\!'
   t_OU_LOGICO          =  r'\|\|'
   t_E_LOGICO           =  r'\&\&'
@@ -113,15 +113,15 @@ File = open(sys.argv[1], encoding="utf-8")
 lexical.lexer.input(File.read())
 
 
-# Tokenize
-print()
-print("{:^20} {:^20} {:^10} {:^10}".format('type', 'value', 'line', 'position'))
+# # Tokenize
+# print()
+# print("{:^20} {:^20} {:^10} {:^10}".format('type', 'value', 'line', 'position'))
 
-while True:
-  tok = lexical.lexer.token()
-  if not tok:
-    break      # No more input
-  print("{:<20} {:^20} {:^10} {:^10}".format(tok.type, tok.value, tok.lineno, tok.lexpos))
+# while True:
+#   tok = lexical.lexer.token()
+#   if not tok:
+#     break      # No more input
+#   print("{:<20} {:^20} {:^10} {:^10}".format(tok.type, tok.value, tok.lineno, tok.lexpos))
 
-print()
-print()
+# print()
+# print()
