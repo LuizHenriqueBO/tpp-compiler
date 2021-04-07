@@ -10,6 +10,10 @@ For run the compiler syntax, run following command:
 python3 lexical.py example.tpp
 ````
 
+For run the parser, run following command:
+````bash
+python3 syntactic.py example.tpp
+````
 
 ## Install language highlight
 
